@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who am I</title>
+</head>
+<body>
+    <h4 id="userName"></h4>
+    <h1 id="ab"></h1>
+    <script>
+       fetch("https://randomuser.me/api/")
+       .then(response => response.json())
+       .then(data => {
+           const user = data.results[0];
+           const name = user.name;
+           const email = user.email;
+           const location = user.location;
+           const userName = `${name.first} khan`;
+           console.log(userName);
+           console.log("location : ", location.city);
+           console.log("email adress: " , email);
+       })
+        // fetch("https://randomuser.me/api/")
+        // .then(response => response.json())
+        // .then(data => {
+        //     const user= data.results[0];
+        //     const name =user.name;
+        //     const userName = `${name.first} ${name.last} ${name.title} khan`;
+        //     console.log(name);
+        //     console.log(userName);
+        //     document.getElementById("userName").innerText = userName;
+            
+        // })
+        
+    </script>
+    
+</body>
+</html>
